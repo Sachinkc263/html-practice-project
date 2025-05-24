@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Webpage</title>
+    <link rel="stylesheet" href="/CSS/stylesheet.css">
+    <script src="/JS/script.js"></script>
+    <style>
+        body {
+            font-family: cursive;
+            font-size: large;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        div#intro, div#form, div#blog, div#gallery, div#contact {
+            margin: 50px;
+            padding: 30px; 
+            border: 1px solid #ccc; 
+            border-radius: 5px;
+        }
+        table, th, td {
+        border: 3px solid black;
+        border-collapse: collapse;
+        text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top part of the webpage -->
+    <header> 
+        <div id="logo" style="display:inline-block; text-align: center; margin: 10px;">
+        <img src="/media/demo.png" alt="logo" width="90" height="30">
+        <h3 style="font-family: cursive;">Simple page </h3>
+        </div>
+        <nav style="border: 2px solid #ccc; padding: 10px; margin:10px; display: flex; "> 
+            <ul style="list-style-type: none; display: flex; gap: 20px; font-size: 20px;">
+                <li><a href="">Home</a></li>
+                <li><a href="#form">Admission</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">ContactUs</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Content part of the webpage -->
+    <main>
+        <div id="intro">
+            <section id="welcome" style="text-align: center;">
+                <h1>Welcome to Our Simple Webpage</h1>
+                <p><b>This is a simple webpage created to demonstrate basic HTML structure, CSS styling, and JavaScript functionality.</b><br>
+                    This simple webpage is coded on 2025/05/23 but you visiting it on <ins><span>2025/05/24</span></ins>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet ducimus modi sunt ullam a in sequi deserunt perferendis quasi harum saepe beatae similique, soluta qui! Delectus veritatis expedita laborum in!
+                </p>
+                <p><i><mark>Feel free to explore the links in the navigation bar above.</i></mark></p>
+                <hr>
+            </section>
+             <section id="features">
+                <h2><u>Features:</u></h2>
+                <ol>
+                    <li><strong>Responsive Design:</strong> The webpage is designed to be responsive and looks good on all devices.</li>
+                    <li><strong>Interactive Elements:</strong> JavaScript is used to add interactivity to the webpage.</li>
+                    <li><strong><del>Sample</del> Simple Navigation:</strong> Easy-to-use navigation links for better user experience.</li>
+                    <li><strong>Well-Structured Content:</strong> Content is organized in a clear and concise manner.</li>
+                    <li><strong>Modern Styling:</strong> CSS is used to style the webpage with a modern look.</li>
+                    <li><strong>Accessible:</strong> The webpage is designed to be accessible to all users.</li>
+                    <li><strong>Cross-Browser Compatibility:</strong> The webpage works well on all major browsers.</li>
+                    <li><strong>SEO Friendly:</strong> The webpage is optimized for search engines.</li>
+                </ol>
+             </section>
+        </div>
+        <div id="form">
+             <section id="admission_form">
+                <h2><u>Admission Form:</u></h2>
+                <form action="">
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name" placeholder="Enter your Name" required><br>
+                    <label for="email">Email:</label>
+                    <input type="text" name="email" id="email" placeholder="Enter your Email" required><br>
+                    <label for="github">Github:</label>
+                    <input type="url" name="github" id="github" placeholder="Enter your Github Link" required><br>
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="password" placeholder="Enter your Password" required><br>
+                    <label for="phone">Phone:</label>
+                    <input type="text" name="phone" id="phone" placeholder="Enter your Phone" required><br>
+                    <label for="gender">Gender:</label>
+                    <input type="radio" name="gender" id="male" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" name="gender" id="female" value="female">
+                    <label for="female">Female</label><br>
+                    <label for="occupation">Occupation:</label>
+                    <select name="occupation" id="occupation">
+                        <option value="student">Student</option>
+                        <option value="employee" selected>Employee</option>
+                        <option value="freelancer">Freelancer</option>
+                        <option value="others">Others</option>
+                    </select><br>
+                    <label for="address">Address:</label>
+                    <input type="text" name="address" id="address" placeholder="Enter your Address" required><br>
+                    <label for="date">BOD:</label>
+                    <input type="date" name="date" id="date" required><br>
+                    <label for="age">Age:</label>
+                    <input type="number" name="age" id="age" required><br>
+                    <label for="citizenship">Citizenship:</label>
+                    <input type="file" name="citizenship" id="citizenship" required><br>
+                    <label for="rateus">Rate us:</label>
+                    <input type="range" name="rateus" id="rate" min="1" max="10" step="1" value="5" required><br>
+                    <textarea name="message" id="message" cols="40" rows="4" placeholder="Enter your message"></textarea><br>
+                    <hr>
+                    <input type="checkbox" name="terms" id="terms" required> I agree to the terms and conditions<br>
+                    <input type="submit" value="Submit">
+                </form>
+             </section>
+        </div>
+        <div id="blog">
+            <section>
+                <h2><u>Blog:</u></h2>
+                <p>Here you can find our latest news and updates.</p>
+                <table style="width: 100%;"> 
+                    <thead>
+                        <tr>
+                        <th>Title</th>
+                        <th>Thumbnail</th>
+                        <th>Released Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td><a href="#" style="color: cornflowerblue;">Blog Post 1</a></td>
+                        <td><img src="/media/blogpost1.jpg" weigth="60px" height="70px"alt="Thumbnail"></td>
+                        <td>2022-01-01</td>
+                        </tr>
+                        <tr>
+                        <td><a href="#" style="color: cornflowerblue;">Blog Post 2</a></td>
+                        <td><img src="/media/blogpost2.jpg" weigth="70px" height="70px" alt="Thumbnail"></td>
+                        <td>2022-01-02</td>
+                        </tr>
+                        <tr>
+                        <td><a href="#" style="color: cornflowerblue;">Blog Post 3</a></td>
+                        <td><img src="/media/blogpost3.jpg"  weigth="10px" height="70px" alt="Thumbnail"></td>
+                        <td>2022-01-03</td>
+                        </tr>
+                        <tr>
+                        <td><a href="#" style="color: cornflowerblue;">Blog Post 4</a></td>
+                        <td><img src="/media/blogpost4.jpg" weigth="70px" height="70px alt="Thumbnail"></td>
+                        <td>2022-01-04</td>
+                        </tr>
+
+                    </tbody>
+                    
+                </table>
+            </section>
+        </div>
+        <div id="gallery">
+            <section>
+                <h2><u>Gallery:</u></h2>
+                <p>Check out our latest photos and videos.</p>
+                <div class="gallery-container">
+                    <img src="/media/image1.png" alt="Image 1"><br>
+                    <img src="/media/image2.png" alt="Image 2"><br>
+                    <img src="/media/image3.png" alt="Image 3"><br>
+                    <video width="600" height="300" controls>
+                        <source src="/media/vedio1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <audio controls>
+                        <source src="/media/audio1.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </section>
+        </div>
+        
+    </main>
+    <!-- End part of the webpage -->
+    <footer>
+        <div id="contact">
+            <section>
+                <h2><u>Contact Us:</u></h2>
+                <p>Get in touch with us through our contact form.</p>
+                <p>Email: <a href="">info@ourwebsite.com</a></p>
+                <p>Phone: 32234123132</p>
+                <div style="padding:20px; background-color:#f2f2f2; text-align:center;">
+                <a href=""><img src="/media/whatsapp.svg" alt="whatsapp logo" width="40" height="40"></a>
+                <a href=""><img src="/media/telegram.svg" alt="telegram logo" width="40" height="40"></a>
+                <a href=""><img src="/media/instagram.svg" alt="instagram logo" width="40" height="40"></a>
+                <a href=""><img src="/media/facebook.svg" alt="facebook logo" width="40" height="40"></a>
+                <a href=""><img src="/media/twitter.svg" alt="twitter logo" width="40" height="40"></a>
+                </div>
+                
+                    
+            </section>
+
+            <p style="margin-top: 20px;">&copy; 2023 Our Website. All rights reserved.</p>
+        </div>
+        
+    </footer>
+    
+</body>
+</html>
