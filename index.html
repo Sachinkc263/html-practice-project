@@ -5,38 +5,138 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Webpage</title>
     <link rel="stylesheet" href="CSS/stylesheet.css">
-    <script src="JS/script.js"></script>
+    <script src="Js/script.js"></script>
     <style>
+        *{
+            box-sizing: border-box;
+        }
         body {
             font-family: cursive;
             font-size: large;
+            margin:0;
+            padding:0;
         }
         a {
             text-decoration: none;
             color: black;
         }
+        header{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        nav{
+            border:2px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            width: 100%;
+        }
+        nav ul{
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            padding: 0;
+            margin: 0;
+            font-size: 18px;
+        }
         div#intro, div#form, div#blog, div#gallery, div#contact {
-            margin: 50px;
+            margin: 50px auto;
             padding: 30px; 
             border: 1px solid #ccc; 
             border-radius: 5px;
+            max-width: 1000px;
+        }
+        table{
+            width:100%;
+            border-collapse: collapse;
         }
         table, th, td {
         border: 3px solid black;
-        border-collapse: collapse;
         text-align: center;
         }
+        .gallery-container img, 
+        .gallery-container video,
+        .gallery-container audio{
+            width: 100%;
+            max-width: 400px;
+            margin: 10px;
+            display: block;
+        }
+        form input:not([type="checkbox"]):not([type="radio"]), form select, form textarea {
+        display: block;
+        width: 100%;
+        max-width: 500px;
+        margin-bottom: 10px;
+        padding: 8px;
+        }
+        #form form {
+        display: flex;
+        flex-direction: column;
+        }
+        .table-responsive {
+        overflow-x: auto;
+        }
+        @media screen and (max-width: 600px) {
+        body {
+            font-size: medium;
+            }
+
+        nav ul {
+            flex-direction: column;
+            gap: 10px;
+            }
+
+        table, thead, tbody, th, td, tr {
+            font-size: smaller;
+            }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            }
+
+        input, select, textarea {
+            width: 100%;
+            box-sizing: border-box;
+            }
+
+        form {
+            max-width: 100%;
+            }
+        }
+         @media (max-width: 768px) {
+        nav ul {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header div#logo img {
+            width: 60px;
+            height: auto;
+        }
+
+        form input:not([type="checkbox"]):not([type="radio"]), form select, form textarea {
+            width: 100%;
+        }
+
+        table, thead, tbody, th, td, tr {
+            font-size: 14px;
+        }
+        }
+
     </style>
 </head>
 <body>
     <!-- Top part of the webpage -->
     <header> 
-        <div id="logo" style="display:inline-block; text-align: center; margin: 10px;">
-        <img src="media/demo.png" alt="logo" width="90" height="30">
-        <h3 style="font-family: cursive;">Simple page </h3>
+        <div id="logo">
+        <img src="media/demo.png" alt="logo" style="width: 120px; height: auto;">
+        <h3>Simple page </h3>
         </div>
-        <nav style="border: 2px solid #ccc; padding: 10px; margin:10px; display: flex; "> 
-            <ul style="list-style-type: none; display: flex; gap: 20px; font-size: 20px;">
+        <nav> 
+            <ul>
                 <li><a href="">Home</a></li>
                 <li><a href="#form">Admission</a></li>
                 <li><a href="#blog">Blog</a></li>
@@ -48,10 +148,10 @@
     <!-- Content part of the webpage -->
     <main>
         <div id="intro">
-            <section id="welcome" style="text-align: center;">
+            <section id="welcome">
                 <h1>Welcome to Our Simple Webpage</h1>
                 <p><b>This is a simple webpage created to demonstrate basic HTML structure, CSS styling, and JavaScript functionality.</b><br>
-                    This simple webpage is coded on 2025/05/23 but you visiting it on <ins><span>2025/05/24</span></ins>
+                    This simple webpage is coded on 2025/05/23 but you visiting it on <ins><span id="visit-date">2025/05/24</span></ins>
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet ducimus modi sunt ullam a in sequi deserunt perferendis quasi harum saepe beatae similique, soluta qui! Delectus veritatis expedita laborum in!
                 </p>
                 <p><i><mark>Feel free to explore the links in the navigation bar above.</i></mark></p>
@@ -78,18 +178,21 @@
                     <label for="name">Name:</label>
                     <input type="text" name="name" id="name" placeholder="Enter your Name" required><br>
                     <label for="email">Email:</label>
-                    <input type="text" name="email" id="email" placeholder="Enter your Email" required><br>
+                    <input type="email" name="email" id="email" placeholder="Enter your Email" required><br>
                     <label for="github">Github:</label>
                     <input type="url" name="github" id="github" placeholder="Enter your Github Link" required><br>
                     <label for="password">Password:</label>
                     <input type="password" name="password" id="password" placeholder="Enter your Password" required><br>
                     <label for="phone">Phone:</label>
                     <input type="text" name="phone" id="phone" placeholder="Enter your Phone" required><br>
-                    <label for="gender">Gender:</label>
-                    <input type="radio" name="gender" id="male" value="male">
-                    <label for="male">Male</label>
-                    <input type="radio" name="gender" id="female" value="female">
-                    <label for="female">Female</label><br>
+                    <label for="gender">Gender:</label><br>
+                    <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 10px;">
+                        
+                        <input type="radio" name="gender" value="male" style="margin-right: 5px;">
+                        <label for="male" style="display: flex; align-items: center;">Male</label> <br>
+                        <input type="radio" name="gender" value="female" style="margin-right: 5px;">
+                        <label for="female" style="display: flex; align-items: center;">Female</label><br>
+                    </div>
                     <label for="occupation">Occupation:</label>
                     <select name="occupation" id="occupation">
                         <option value="student">Student</option>
@@ -108,8 +211,11 @@
                     <label for="rateus">Rate us:</label>
                     <input type="range" name="rateus" id="rate" min="1" max="10" step="1" value="5" required><br>
                     <textarea name="message" id="message" cols="40" rows="4" placeholder="Enter your message"></textarea><br>
-                    <hr>
-                    <input type="checkbox" name="terms" id="terms" required> I agree to the terms and conditions<br>
+                    <hr style="margin: 20px 0;">
+                    <label style="display: flex; align-items:center; gap: 6px;">
+                        <input type="checkbox" name="terms" id="terms" required>
+                        I agree to the terms and conditions
+                    </label><br>
                     <input type="submit" value="Submit">
                 </form>
              </section>
@@ -118,39 +224,42 @@
             <section>
                 <h2><u>Blog:</u></h2>
                 <p>Here you can find our latest news and updates.</p>
-                <table style="width: 100%;"> 
-                    <thead>
-                        <tr>
-                        <th>Title</th>
-                        <th>Thumbnail</th>
-                        <th>Released Date</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                        <td><a href="#" style="color: cornflowerblue;">Blog Post 1</a></td>
-                        <td><img src="media/blogpost1.jpg" weigth="60px" height="70px"alt="Thumbnail"></td>
-                        <td>2022-01-01</td>
-                        </tr>
-                        <tr>
-                        <td><a href="#" style="color: cornflowerblue;">Blog Post 2</a></td>
-                        <td><img src="media/blogpost2.jpg" weigth="70px" height="70px" alt="Thumbnail"></td>
-                        <td>2022-01-02</td>
-                        </tr>
-                        <tr>
-                        <td><a href="#" style="color: cornflowerblue;">Blog Post 3</a></td>
-                        <td><img src="media/blogpost3.jpg"  weigth="10px" height="70px" alt="Thumbnail"></td>
-                        <td>2022-01-03</td>
-                        </tr>
-                        <tr>
-                        <td><a href="#" style="color: cornflowerblue;">Blog Post 4</a></td>
-                        <td><img src="media/blogpost4.jpg" weigth="70px" height="70px alt="Thumbnail"></td>
-                        <td>2022-01-04</td>
-                        </tr>
+                <div class="table-responsive">
 
-                    </tbody>
-                    
-                </table>
+                    <table> 
+                        <thead>
+                            <tr>
+                            <th>Title</th>
+                            <th>Thumbnail</th>
+                            <th>Released Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td><a href="#" style="color: cornflowerblue;">Blog Post 1</a></td>
+                            <td><img src="media/blogpost1.jpg" width="60px" height="60px" object-fit="cover" alt="Thumbnail"></td>
+                            <td>2022-01-01</td>
+                            </tr>
+                            <tr>
+                            <td><a href="#" style="color: cornflowerblue;">Blog Post 2</a></td>
+                            <td><img src="media/blogpost2.jpg" width="60px" height="60px" object-fit="cover" alt="Thumbnail"></td>
+                            <td>2022-01-02</td>
+                            </tr>
+                            <tr>
+                            <td><a href="#" style="color: cornflowerblue;">Blog Post 3</a></td>
+                            <td><img src="media/blogpost3.jpg"  width="60px" height="60px" object-fit="cover" alt="Thumbnail"></td>
+                            <td>2022-01-03</td>
+                            </tr>
+                            <tr>
+                            <td><a href="#" style="color: cornflowerblue;">Blog Post 4</a></td>
+                            <td><img src="media/blogpost4.jpg" width="60px" height="60px" object-fit="cover" alt="Thumbnail"></td>
+                            <td>2022-01-04</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+                </div>
             </section>
         </div>
         <div id="gallery">
@@ -161,7 +270,7 @@
                     <img src="media/image1.png" alt="Image 1"><br>
                     <img src="media/image2.png" alt="Image 2"><br>
                     <img src="media/image3.png" alt="Image 3"><br>
-                    <video width="600" height="300" controls>
+                    <video controls>
                         <source src="media/vedio1.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
