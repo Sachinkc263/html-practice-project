@@ -9,7 +9,7 @@ This is a beginner-friendly HTML project that demonstrates the use of various HT
 - Multimedia: images, audio, video
 - Lists: ordered, unordered
 - Tables and comments
-- Meta tags, and basic CSS 
+- Meta tags, and basic CSS and js integration 
 
 ---
 
@@ -18,6 +18,8 @@ This is a beginner-friendly HTML project that demonstrates the use of various HT
 ```bash
 📦 html-practice-project
  ┣ 📜 index.html
+ ┣ 📂JS/
+ ┃ ┗  📜 script.js
  ┣ 📂 media/
  ┃ ┣ 📜 image.jpg
  ┃ ┗ 📜 video.mp4
